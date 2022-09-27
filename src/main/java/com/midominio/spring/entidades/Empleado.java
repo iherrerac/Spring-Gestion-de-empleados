@@ -16,6 +16,8 @@ public class Empleado {
 	private String email;
 	@Size
 	private String telefono;
+	//Agregamos ruta a la imagen
+	private String imagen;
 	private boolean directivo;
 
 	//constructores, getters y setters
@@ -29,6 +31,19 @@ public class Empleado {
 		this.nombre = nombre;
 		this.email = email;
 		this.telefono = telefono;
+		this.directivo = directivo;
+	}
+
+	//Añadimos constructor con atributo "imagen". Al agregar la validacion la agrega tb al constructor
+	public Empleado(@Min(value = 0, message = "{empleado.id.mayorquecero}") long id,
+			@NotNull(message = "aaaaaaaa") String nombre, @Email(message = "{empleado.email.email}") String email,
+			@Size String telefono, String imagen, boolean directivo) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.email = email;
+		this.telefono = telefono;
+		this.imagen = imagen;
 		this.directivo = directivo;
 	}
 
@@ -64,7 +79,16 @@ public class Empleado {
 		this.telefono = telefono;
 	}
 	
-    public boolean isDirectivo() {
+	//Agregamos Getter and setter de imagen
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+	public boolean isDirectivo() {
 		return directivo;
 	}
 
@@ -72,9 +96,10 @@ public class Empleado {
 		this.directivo = directivo;
 	}
 
+	//Generamos de nuevo hascode, equals y toString con el atributo "imagen" 
 	@Override
 	public int hashCode() {
-		return Objects.hash(directivo, email, id, nombre, telefono);
+		return Objects.hash(directivo, email, id, imagen, nombre, telefono);
 	}
 
 	@Override
@@ -87,13 +112,14 @@ public class Empleado {
 			return false;
 		Empleado other = (Empleado) obj;
 		return directivo == other.directivo && Objects.equals(email, other.email) && id == other.id
-				&& Objects.equals(nombre, other.nombre) && Objects.equals(telefono, other.telefono);
+				&& Objects.equals(imagen, other.imagen) && Objects.equals(nombre, other.nombre)
+				&& Objects.equals(telefono, other.telefono);
 	}
 
 	@Override
 	public String toString() {
-		return "Empleado [id=" + id + ", nombre=" + nombre + ", email=" + email + ", telefono=" + telefono
-				+ ", directivo=" + directivo + "]";
+		return "Empleado [id=" + id + ", nombre=" + nombre + ", email=" + email + ", telefono=" + telefono + ", imagen="
+				+ imagen + ", directivo=" + directivo + "]";
 	}
 
 	

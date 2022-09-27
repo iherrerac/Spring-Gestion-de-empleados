@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.midominio.spring.entidades.Empleado;
 import com.midominio.spring.servicios.EmpleadoService;
@@ -35,11 +37,15 @@ public class MainController {
 		return "form";
 	}
 	@PostMapping("/empleado/new/submit")
-	public String nuevoEmpleadoSubmit (@Valid @ModelAttribute ("empleadoForm") Empleado nuevoEmpleado, BindingResult bindingResult) {
+	public String nuevoEmpleadoSubmit (@Valid @ModelAttribute ("empleadoForm") Empleado nuevoEmpleado, BindingResult bindingResult,
+			@RequestParam ("file") MultipartFile file) {
 		
 		if(bindingResult.hasErrors()) {
 			return "form";
 		} else {
+			if(!file.isEmpty()) {
+				//Lógica de almacenamiento del fichero
+			}
 			servicio.add(nuevoEmpleado);
 			return "redirect:/empleado/list";
 		}
