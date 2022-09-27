@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.midominio</groupId>
-	<artifactId>09_SubidaFicheros</artifactId>
+	<artifactId>10_SubidaFicheros2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>02_Controlador</name>
-	<description>Ejemplo de formulario usando Thimeleaf y como implementar la subida de ficheros</description>
+	<name>10_SubidaFicheros2</name>
+	<description>Ejemplo de formulario usando Thimeleaf y como implementar la subida de ficheros 2ª parte</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
