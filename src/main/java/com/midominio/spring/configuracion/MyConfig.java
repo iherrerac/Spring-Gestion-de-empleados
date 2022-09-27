@@ -1,11 +1,15 @@
 package com.midominio.spring.configuracion;
 
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
+import com.midominio.spring.upload.storage.StorageProperties;
+
 @Configuration
+@EnableConfigurationProperties(StorageProperties.class)
 public class MyConfig {
 	
 	//Carga un recurso (un fichero) como bundle
