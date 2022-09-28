@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.midominio</groupId>
-	<artifactId>10_SubidaFicheros2</artifactId>
+	<artifactId>11_SpringSecurity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>10_SubidaFicheros2</name>
-	<description>Ejemplo de formulario usando Thimeleaf y como implementar la subida de ficheros 2ª parte</description>
+	<description>Aplicación de gestion de empleados, habilitamos autenticacion/autorizacion spring security</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -52,6 +52,19 @@
 		<dependency> 
 		    <groupId>org.springframework.boot</groupId> 
 		    <artifactId>spring-boot-starter-validation</artifactId> 
+		</dependency>
+		
+		<!-- Inyectamos dependencias Spring Security -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		<!-- extras de thymeleaf para Spring Security -->
+		<dependency>
+		    <groupId>org.thymeleaf.extras</groupId>
+		    <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+		    <version>3.0.4.RELEASE</version>
 		</dependency>
 	</dependencies>
 
