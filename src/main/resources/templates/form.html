@@ -45,10 +45,29 @@
             <li class="active"><a href="#">Inicio</a></li>
             <li><a href="/empleado/new">Nuevo empleado</a></li>
           </ul>
+        	<!--  Agregamos entrada Nombre de usuario/Logout -->
+          <ul class="nav navbar-nav navbar-right">
+          	<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" 
+          		   data-toggle="dropdown" role="button" 
+          		   aria-haspopup="true" aria-expanded="false">
+          		   		<span th:text="${#authentication.name}">Menú</span> <span class="caret"></span>
+          		</a>
+          		<ul class="dropdown-menu">          			
+          			<li>
+          				<a href="javascript:document.getElementById('logoutForm').submit()">Salir</a>
+          			</li>          			
+          		</ul>
+          </ul>
         </div>
+             
         <!--/.nav-collapse -->
       </div>
     </nav>
+    
+	<!-- Llamada a formulario logout -->
+	<form th:action="@{/logout}" method="POST" id="logoutForm">
+    </form>
 
     <div class="container">
 
