@@ -34,6 +34,18 @@ public class Empleado {
 		
 	}
 	
+	
+	public Empleado(@NotNull(message = "aaaaaaaa") String nombre,
+			@Email(message = "{empleado.email.email}") String email, @Size String telefono) {
+		super();
+		this.nombre = nombre;
+		this.email = email;
+		this.telefono = telefono;
+		this.imagen = imagen;
+		this.directivo = directivo;
+	}
+
+
 	public Empleado(long id, String nombre, String email, String telefono, boolean directivo) {
 		super();
 		this.id = id;
