@@ -11,8 +11,8 @@
 	<groupId>com.midominio</groupId>
 	<artifactId>11_SpringSecurity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>10_SubidaFicheros2</name>
-	<description>Aplicación de gestion de empleados, habilitamos autenticacion/autorizacion spring security</description>
+	<name>12_SpringSessionwithDataRedis</name>
+	<description>Aplicación de gestion de empleados, Spring Sessions con Data Redis</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
