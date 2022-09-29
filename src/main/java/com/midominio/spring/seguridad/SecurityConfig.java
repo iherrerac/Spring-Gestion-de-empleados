@@ -1,7 +1,5 @@
 package com.midominio.spring.seguridad;
 
-import javax.annotation.security.PermitAll;
-
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -44,8 +42,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.anyRequest().authenticated() //Cualquier otra peticion tendra que venir autenticada
 				.and()
 		.formLogin()
-			.loginPage("/login")
-			.permitAll();
+			.loginPage("/login").permitAll()
+			.failureUrl("/login?error"); //  Al intentar un login fallido nos redirige a /login?error
+			
 	}
 	
 	
