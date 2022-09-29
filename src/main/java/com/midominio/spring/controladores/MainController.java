@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 import com.midominio.spring.entidades.Empleado;
-import com.midominio.spring.servicios.EmpleadoService;
+import com.midominio.spring.servicios.EmpleadoServiceMemory;
 import com.midominio.spring.upload.storage.StorageService;
 
 
@@ -26,7 +26,7 @@ import com.midominio.spring.upload.storage.StorageService;
 public class MainController {
 
 	@Autowired
-	private EmpleadoService servicio;
+	private EmpleadoServiceMemory servicio;
 	
 	@Autowired
 	private StorageService storageService;

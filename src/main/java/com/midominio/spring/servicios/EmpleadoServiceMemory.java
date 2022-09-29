@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.midominio.spring.entidades.Empleado;
 
-@Service
-public class EmpleadoService {
+@Service("EmpleadoServiceMemory")
+public class EmpleadoServiceMemory {
 	
 	private List<Empleado> repositorio = new ArrayList<>();
 	
