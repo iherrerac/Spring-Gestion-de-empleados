@@ -42,6 +42,8 @@ CommandLineRunner initData(EmpleadoRepository repositorio) {
 		
 		repositorio.save(empleado);
 		repositorio.save(empleado2);
+		
+		repositorio.findAll().forEach(System.out::println);
 	};
   }	
 }
