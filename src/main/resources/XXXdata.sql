@@ -1,0 +1,3 @@
+insert into Empleado (id,nombre,email,telefono,directivo)values(1, 'Antonio García', 'antonio.garcia@openwebinars.net', 954000000, 'true');
+insert into Empleado (id,nombre,email,telefono,directivo)values(2, 'María López', 'maria.lopez@openwebinars.net', 954000000,'false');
+insert into Empleado (id,nombre,email,telefono,directivo)values(3, 'Ángel Antúnez', 'angel.antunez@openwebinars.net', 954000000, 'true');

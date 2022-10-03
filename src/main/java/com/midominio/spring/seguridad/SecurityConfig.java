@@ -40,12 +40,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			
 		http
 			.authorizeRequests() //Para autorizar las peticiones
-				.antMatchers("/webjars/**","/css/**").permitAll() //Expresiones helpup ( cadenas con comodin ) vamos a permitirlas siempre
+				.antMatchers("/webjars/**","/css/**","/h2-console/**").permitAll() //Expresiones helpup ( cadenas con comodin ) vamos a permitirlas siempre
 				.anyRequest().authenticated() //Cualquier otra peticion tendra que venir autenticada
 				.and()
 		.formLogin()
 			.loginPage("/login")
 			.permitAll();
+		//Si no deshabiliramos el csrf y los frames la consola no podria trabajar
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
 	}
 	
 	

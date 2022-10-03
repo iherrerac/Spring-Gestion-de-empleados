@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 import com.midominio.spring.entidades.Empleado;
-import com.midominio.spring.servicios.EmpleadoServiceMemory;
+import com.midominio.spring.servicios.EmpleadoService;
 import com.midominio.spring.upload.storage.StorageService;
 
 
@@ -26,7 +26,8 @@ import com.midominio.spring.upload.storage.StorageService;
 public class MainController {
 
 	@Autowired
-	private EmpleadoServiceMemory servicio;
+	//private EmpleadoServiceMemory servicio;
+	private EmpleadoService servicio; // Cambiamos el cableado del servicio
 	
 	@Autowired
 	private StorageService storageService;
@@ -87,7 +88,7 @@ public class MainController {
 	
 	@GetMapping("/files/{filename:.+}")
 	@ResponseBody
-	public ResponseEntity<Resource> serverFile(@PathVariable String filename){
+	public ResponseEntity<Resource> serveFile(@PathVariable String filename){
 		Resource file = storageService.loadAsResource(filename);
 		return ResponseEntity.ok().body(file);
 		
