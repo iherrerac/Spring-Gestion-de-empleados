@@ -83,11 +83,11 @@
 				
 				<!-- Text input-->
 				<!-- Indicamos mediante Thymeleaf y la etiqueta bootstrap 'has-error' que aplique dicha etiqueta-->
-				<div class="form-group" th:classappend="${#fields.hasErrors('id')} ? 'has-error'">
+				 <div class="form-group" th:classappend="${#fields.hasErrors('id')} ? 'has-error'">
 				  <label class="col-md-4 control-label" for="id">ID</label>  
 				  <div class="col-md-4">
 				  <!-- agregamos atributo solo lectura con attrappend para no poder modificar ID si se edita -->
-				  <input id="id" name="id" type="text" placeholder="0" class="form-control input-md" required="" th:field="*{id}"
+				  <input id="id" name="id" type="hidden" placeholder="0" class="form-control input-md" required="" th:field="*{id}"
 				  th:attrappend="readonly = ${empleadoForm.id !=0} ? 'readonly' : null">
 				  <!-- Agregamos etiqueta span que nos muestre el error o errores-->
 				  <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class='help-block' id='id-error'>Errores</span> 
