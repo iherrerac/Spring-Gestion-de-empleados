@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.midominio</groupId>
-	<artifactId>13_SpringDataJPA</artifactId>
+	<artifactId>14_SpringDataJPAConsultaBD</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>12_SpringSessionwithDataRedis</name>
-	<description>Aplicación de gestion de empleados, Spring Data JPA</description>
+	<description>Aplicación de gestion de empleados, Spring Data JPA Realizacion de consultas a medida</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

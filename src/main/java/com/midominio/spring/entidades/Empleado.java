@@ -17,7 +17,8 @@ import javax.validation.constraints.Size;
 public class Empleado {
 	
 	@Id @GeneratedValue
-	@Min(value=0,message="{empleado.id.mayorquecero}")
+	//Hemos activado la autogeneración, por lo que esta anotación ya no hace falta
+	//@Min(value=0,message="{empleado.id.mayorquecero}")
 	private long id;
 	
 	@Column(nullable=false)
