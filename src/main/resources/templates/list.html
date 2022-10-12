@@ -58,8 +58,14 @@
           				<a href="javascript:document.getElementById('logoutForm').submit()">Salir</a>
           			</li>          			
           		</ul>
-          </ul>          
+          </ul> 
+
+        	  <!-- Busqueda  -->          
+	          <form class="navbar-form navbar-rigth">
+	          	<input type="text" class="form-control" placeholder="Buscar ..." name = "q" th:value="${param.q}">
+	          </form>
         </div>
+
         <!--/.nav-collapse -->
       </div>
     </nav>
