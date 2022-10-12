@@ -11,7 +11,7 @@
 	<groupId>com.midominio</groupId>
 	<artifactId>14_SpringDataJPAConsultaBD</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>12_SpringSessionwithDataRedis</name>
+	<name>14_SpringDataJPAConsultaBD</name>
 	<description>Aplicación de gestion de empleados, Spring Data JPA Realizacion de consultas a medida</description>
 	<properties>
 		<java.version>11</java.version>
