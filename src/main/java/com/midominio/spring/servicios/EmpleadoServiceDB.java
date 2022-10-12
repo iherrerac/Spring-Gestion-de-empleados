@@ -43,7 +43,10 @@ public class EmpleadoServiceDB implements EmpleadoService {
 	@Override
 	public List<Empleado> buscador(String e) {
 		//Llama a la consulta de BD de nombre de metodo en EmpleadoRepositorio
-		return repositorio.findByNombreContainsIgnoreCaseOrEmailContainsIgnoreCaseOrTelefonoContainsIgnoreCase(e,e,e);
+		//return repositorio.findByNombreContainsIgnoreCaseOrEmailContainsIgnoreCaseOrTelefonoContainsIgnoreCase(e,e,e);
+		
+		//Igual que el codigo anterior comentado, pero en vez de buscar con consultas de nombre de metodo, lo hacemos con JPQL
+		return repositorio.buscaPorNombreEmailTelefono(e);
 	}
 
 }
