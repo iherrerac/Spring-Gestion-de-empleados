@@ -1,5 +1,7 @@
 package com.midominio.spring.controladores;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +36,10 @@ public class MainController {
 	
 	//Listar usuarios
 	@GetMapping({"/","empleado/list"})
-	public String ListadoEmpleados(Model model) {
-		model.addAttribute("ListaEmp", servicio.findAll());
+	//Agregamos que capture el parametro del buscador
+	public String ListadoEmpleados(Model model, @RequestParam (name="q", required=false) String query) {
+		List<Empleado> resultado = (query == null)? servicio.findAll() : servicio.buscador(query);
+		model.addAttribute("ListaEmp", resultado);
 		return "list";
 	}
 
@@ -93,5 +97,5 @@ public class MainController {
 		return ResponseEntity.ok().body(file);
 		
 	}
-
+	
 }

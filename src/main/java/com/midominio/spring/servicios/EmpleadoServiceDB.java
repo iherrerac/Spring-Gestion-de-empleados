@@ -39,5 +39,11 @@ public class EmpleadoServiceDB implements EmpleadoService {
 		//Si la entidad que vamos a salvar ya tiene un Id pues edita el que tengamos
 		return repositorio.save(e);
 	}
+	
+	@Override
+	public List<Empleado> buscador(String e) {
+		//Llama a la consulta de BD de nombre de metodo en EmpleadoRepositorio
+		return repositorio.findByNombreContainsIgnoreCaseOrEmailContainsIgnoreCaseOrTelefonoContainsIgnoreCase(e,e,e);
+	}
 
 }

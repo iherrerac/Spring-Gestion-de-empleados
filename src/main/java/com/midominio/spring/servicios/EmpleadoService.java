@@ -11,4 +11,5 @@ public interface EmpleadoService {
 	public List<Empleado> findAll();
 	public Empleado findById(long id);
 	public Empleado edit (Empleado e);
+	public List<Empleado> buscador(String e);
 }
